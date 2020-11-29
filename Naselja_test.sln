@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Naselja_test_mvc", "Naselja_test\Naselja_test_mvc.csproj", "{27621EDE-D0E4-46FB-A07C-B32560722AEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Naselja_test_api", "Naselja_test_api\Naselja_test_api.csproj", "{A5BDE725-B22F-402C-8113-E8DB58F9E069}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27621EDE-D0E4-46FB-A07C-B32560722AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27621EDE-D0E4-46FB-A07C-B32560722AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27621EDE-D0E4-46FB-A07C-B32560722AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27621EDE-D0E4-46FB-A07C-B32560722AEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5BDE725-B22F-402C-8113-E8DB58F9E069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5BDE725-B22F-402C-8113-E8DB58F9E069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5BDE725-B22F-402C-8113-E8DB58F9E069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5BDE725-B22F-402C-8113-E8DB58F9E069}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87F73A92-9676-4B33-85B3-82A8F350EB17}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,65 @@
+﻿@model List<Naselje>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div>
+    Broj naselja u bazi: @ViewData["brojNaselja"]
+</div>
+
+<div id="NaseljeEditForm">
+</div>
+
+<button class="btn btn-primary" onclick="showAddForm()">Dodaj naselje</button>
+<div id="NaseljeAddForm">
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Naselje</th>
+            <th scope="col">Poštanski broj</th>
+            <th scope="col">Država</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var naselje in @Model)
+        {
+            <tr>
+                <td>@naselje.Naziv</td>
+                <td>@naselje.PostanskiBroj</td>
+                <td>@naselje.Drzava.Naziv</td>
+                @if (naselje.ID != 0)
+                {
+                    <td><button class="btn btn-primary" id="editNaseljeBtn" onclick="populateEditForm(@Model.IndexOf(naselje))">Uredi</button></td>
+                    <td><button class="btn btn-primary" onclick="location.href='@Url.Action("DeleteNaselje", "Naselja", new { naseljeID = naselje.ID })'">Obriši</button></td>
+                }
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (int.Parse(@ViewContext.RouteData.Values["id"]?.ToString() ?? "1") > 1)
+{
+    <button class="btn btn-primary" onclick="location.href='@Url.Action("index", new { id = int.Parse(@ViewContext.RouteData.Values["id"]?.ToString() ?? "1") - 1 })'">Prethodna stranica</button>
+}
+@if (Model.Count == (int)ViewData["pageSize"])
+{
+    <button class="btn btn-primary" onclick="location.href='@Url.Action("index", new { id = int.Parse(@ViewContext.RouteData.Values["id"]?.ToString() ?? "1") + 1 })'">Sljedeća stranica</button>
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+    function populateEditForm(i) {
+            var jsModel = @Html.Raw(Json.Serialize(@Model));
+            $('#NaseljeEditForm').load('@Url.Action("EditNaselje", "Naselja")', jsModel[i]);
+    }
+
+    function showAddForm() {
+        $('#NaseljeAddForm').load('@Url.Action("AddNaselje", "Naselja")');
+    }
+
+</script>
